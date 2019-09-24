@@ -1,0 +1,51 @@
+// @import "bourbon"
+
+@import "fonts"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #777
+	opacity: .5
+
+*::-moz-placeholder
+	color: #777
+	opacity: .5
+
+*:-ms-input-placeholder
+	color: #777
+	opacity: .5
+
+*::-ms-clear // убрать крестик очистки поля в IE
+	display: none
+
+*:invalid // убрать обводку незаполн. поля в Мозиле
+	box-shadow: none
+
+input:focus:required:invalid,
+textarea:focus:required:invalid
+	color: red
+	border: 1px solid red
+	background-color: transparent
+
+input:required:valid,
+textarea:required:valid
+	border: 1px solid green
+	color: green
+	background-color: transparent
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.5
+	font-family: "RobotoRegular", sans-serif
+	overflow-x: hidden
+
+.hidden
+	display: none
+
+p
+	&:hover
+		transform: scale(1.5)
+
+@import "media"
