@@ -1,7 +1,21 @@
 @font-face {
-  font-family: "RobotoRegular";
-  src: url("../fonts/RobotoRegular/RobotoRegular.eot");
-  src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+  font-family: "OpenSansLight";
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300; }
+
+@font-face {
+  font-family: "OpenSansSemiBold";
+  src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot");
+  src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"), url("../fonts/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal; }
 
@@ -37,25 +51,229 @@ textarea:required:valid {
   background-color: transparent; }
 
 body {
-  font-size: 16px;
   min-width: 320px;
-  position: relative;
   line-height: 1.5;
-  font-family: "RobotoRegular", sans-serif;
-  overflow-x: hidden; }
+  font-family: OpenSansLight, sans-serif;
+  color: #333;
+  font-size: 16px; }
 
-.hidden {
-  display: none; }
+* {
+  margin: 0;
+  padding: 0; }
 
-p:hover {
-  -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5); }
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  font-family: OpenSansSemiBold, sans-serif;
+  text-transform: uppercase; }
+
+ul, li {
+  display: block;
+  margin: 0;
+  padding: 0; }
+
+.s-title {
+  font-size: 38px;
+  color: #1abc9c;
+  text-align: center;
+  position: relative;
+  padding: 48px 0; }
+  .s-title::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 400px;
+    height: 1px;
+    background-color: #b5b5b5;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: 0; }
+  .s-title::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100px;
+    height: 3px;
+    background-color: #1abc9c;
+    bottom: -1px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: 1; }
+  .s-title_white::before {
+    background-color: #fff; }
+
+.header {
+  background-image: url("../img/header-bg.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.logo {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: -5px;
+  font-size: 52px;
+  text-transform: uppercase;
+  font-family: OpenSansBold, sans-serif;
+  line-height: 1; }
+  .logo span {
+    color: #1edab5; }
+  .logo:hover {
+    text-decoration: none;
+    color: #fff; }
+
+h1 {
+  font-family: OpenSansLight, sans-serif;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: none;
+  font-weight: 300; }
+
+.top-grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .top-grid__item {
+    width: 185px;
+    height: 185px;
+    background-color: #1edab5;
+    padding: 40px 0;
+    position: relative;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    display: block; }
+    .top-grid__item:first-child {
+      width: 555px;
+      background-color: transparent; }
+    .top-grid__item:nth-child(4), .top-grid__item:nth-child(11), .top-grid__item:nth-child(14), .top-grid__item:nth-child(15) {
+      background-color: transparent; }
+    .top-grid__item:nth-child(3), .top-grid__item:nth-child(7), .top-grid__item:nth-child(8), .top-grid__item:nth-child(10), .top-grid__item:nth-child(12), .top-grid__item:nth-child(16) {
+      background-image: url("../img/top-grid-1.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+    .top-grid__item:nth-child(5) {
+      background-color: #1abc9c; }
+    .top-grid__item:nth-child(7) {
+      background-image: url("../img/top-grid-2.jpg"); }
+    .top-grid__item:nth-child(8) {
+      background-image: url("../img/top-grid-3.jpg"); }
+    .top-grid__item:nth-child(10) {
+      background-image: url("../img/top-grid-4.jpg"); }
+    .top-grid__item:nth-child(12) {
+      background-image: url("../img/top-grid-5.jpg"); }
+    .top-grid__item:nth-child(16) {
+      background-image: url("../img/top-grid-6.jpg"); }
+    .top-grid__item:nth-child(5) .top-grid__image {
+      background-image: url("../img/top-lcd.png"); }
+    .top-grid__item:nth-child(6) .top-grid__image {
+      background-image: url("../img/top-pen.png"); }
+    .top-grid__item:nth-child(9) .top-grid__image {
+      background-image: url("../img/top-info.png"); }
+    .top-grid__item:nth-child(13) .top-grid__image {
+      background-image: url("../img/top-mail.png"); }
+  .top-grid__content {
+    height: 100%;
+    text-align: center;
+    position: relative; }
+  .top-grid__image {
+    background-image: url("../img/top-users.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto; }
+  .top-grid__title {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: -1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%; }
+
+a.top-grid__item:hover {
+  background-color: #17a689; }
 
 /*==========  Desktop First Method  ==========*/
 /* Large Devices, Wide Screens */
-@media only screen and (max-width: 1200px) {
-  /**/ }
+@media only screen and (max-width: 1199px) {
+  .top-grid__item:nth-child(16),
+  .top-grid__item:nth-child(15),
+  .top-grid__item:nth-child(14) {
+    margin-top: -185px; } }
+
+@media only screen and (max-width: 991px) {
+  .top-grid__item {
+    width: 172px;
+    height: 172px; }
+  .top-grid__item:nth-child(14) {
+    margin-top: initial; }
+  .top-grid__item:nth-child(15) {
+    margin-top: -172px; }
+  .top-grid__item:nth-child(16) {
+    margin-top: -172px;
+    margin-left: 344px; }
+  .top-grid__item:nth-child(1) {
+    width: 516px; }
+  .top-grid__item:nth-child(2),
+  .top-grid__item:nth-child(13) {
+    background-color: #1abc9c; } }
+
+@media only screen and (max-width: 767px) {
+  .top-grid__item {
+    width: 170px;
+    height: 170px; }
+  .top-grid__item:nth-child(1) {
+    width: 100%; }
+  .top-grid__item:nth-child(14),
+  .top-grid__item:nth-child(15) {
+    margin-top: -170px; }
+  .top-grid__item:nth-child(16) {
+    margin-left: -340px;
+    margin-top: -170px; }
+  .top-grid__item:nth-child(2) {
+    background-color: #1edab5; }
+  .top-grid__item:nth-child(9) {
+    background-color: #1abc9c; } }
+
+@media only screen and (max-width: 575px) {
+  .top-grid__item {
+    width: 50%; }
+  .top-grid__item:nth-child(1) {
+    text-align: center; }
+  .top-grid__item:nth-child(15) {
+    margin-top: -340px; }
+  .top-grid__item:nth-child(16) {
+    margin-left: initial;
+    margin-top: initial; }
+  .logo {
+    font-size: 42px; } }
 
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */

@@ -3,8 +3,58 @@
 /*==========  Desktop First Method  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1199px)
+	.top-grid__item:nth-child(16),
+	.top-grid__item:nth-child(15),
+	.top-grid__item:nth-child(14)
+		margin-top: -185px
+
+@media only screen and (max-width : 991px)
+	.top-grid__item
+		width: 172px
+		height: 172px
+	.top-grid__item:nth-child(14)
+		margin-top: initial
+	.top-grid__item:nth-child(15)
+		margin-top: -172px
+	.top-grid__item:nth-child(16)
+		margin-top: -172px
+		margin-left: 344px
+	.top-grid__item:nth-child(1)
+		width: 516px
+	.top-grid__item:nth-child(2),
+	.top-grid__item:nth-child(13),
+		background-color: $accent
+
+@media only screen and (max-width : 767px)
+	.top-grid__item
+		width: 170px
+		height: 170px
+	.top-grid__item:nth-child(1)
+		width: 100%
+	.top-grid__item:nth-child(14),
+	.top-grid__item:nth-child(15)
+		margin-top: -170px
+	.top-grid__item:nth-child(16)
+		margin-left: -340px
+		margin-top: -170px
+	.top-grid__item:nth-child(2)
+		background-color: $accent-light
+	.top-grid__item:nth-child(9)
+		background-color: $accent
+
+@media only screen and (max-width : 575px)
+	.top-grid__item
+		width: 50%
+	.top-grid__item:nth-child(1)
+		text-align: center
+	.top-grid__item:nth-child(15)
+		margin-top: -340px
+	.top-grid__item:nth-child(16)
+		margin-left: initial
+		margin-top: initial
+	.logo
+		font-size: 42px
 
 /*==========  Mobile First Method  ==========*/
 

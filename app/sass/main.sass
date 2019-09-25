@@ -34,18 +34,162 @@ textarea:required:valid
 	background-color: transparent
 
 body
-	font-size: 16px
 	min-width: 320px
-	position: relative
 	line-height: 1.5
-	font-family: "RobotoRegular", sans-serif
-	overflow-x: hidden
+	font-family: OpenSansLight, sans-serif
+	color: #333
+	font-size: 16px
 
-.hidden
-	display: none
+*
+	margin: 0
+	padding: 0
 
-p
+h1, h2, h3, h4, h5
+	margin: 0
+	padding: 0
+	font-family: OpenSansSemiBold, sans-serif
+	text-transform: uppercase
+
+ul, li
+	display: block
+	margin: 0
+	padding: 0
+
+.s-title
+	font-size: 38px
+	color: $accent
+	text-align: center
+	position: relative
+	padding: 48px 0
+	&::after
+		position: absolute
+		display: block
+		content: ''
+		width: 400px
+		height: 1px
+		background-color: #b5b5b5
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		z-index: 0
+	&::before
+		position: absolute
+		display: block
+		content: ''
+		width: 100px
+		height: 3px
+		background-color: $accent
+		bottom: -1px
+		left: 50%
+		transform: translateX(-50%)
+		z-index: 1
+	&_white
+		&::before
+			background-color: #fff
+
+.header
+	background-image: url('../img/header-bg.jpg')
+	background-position: center top
+	background-size: cover
+	background-repeat: no-repeat
+	min-height: 100vh
+	display: flex
+	align-items: center
+
+.logo
+	display: block
+	text-decoration: none
+	color: #fff
+	letter-spacing: -5px
+	font-size: 52px
+	text-transform: uppercase
+	font-family: OpenSansBold, sans-serif
+	line-height: 1
+	span
+		color: $accent-light
 	&:hover
-		transform: scale(1.5)
+		text-decoration: none
+		color: #fff
+
+h1
+	font-family: OpenSansLight, sans-serif
+	font-size: 20px
+	color: #fff
+	letter-spacing: 3px
+	text-transform: none
+	font-weight: 300
+
+.top-grid
+	display: flex
+	flex-wrap: wrap
+	&__item
+		width: 185px
+		height: 185px
+		background-color: $accent-light
+		padding: 40px 0
+		position: relative
+		transition: all .5s ease
+		display: block
+		&:first-child
+			width: 555px
+			background-color: transparent
+		&:nth-child(4), &:nth-child(11), 
+		&:nth-child(14), &:nth-child(15),
+			background-color: transparent
+		&:nth-child(3), &:nth-child(7), 
+		&:nth-child(8), &:nth-child(10),
+		&:nth-child(12), &:nth-child(16)
+			background-image: url('../img/top-grid-1.jpg')
+			background-position: center center
+			background-repeat: no-repeat
+			background-size: cover
+		&:nth-child(5)
+			background-color: $accent
+		&:nth-child(7)
+			background-image: url('../img/top-grid-2.jpg')
+		&:nth-child(8)
+			background-image: url('../img/top-grid-3.jpg')
+		&:nth-child(10)
+			background-image: url('../img/top-grid-4.jpg')
+		&:nth-child(12)
+			background-image: url('../img/top-grid-5.jpg')
+		&:nth-child(16)
+			background-image: url('../img/top-grid-6.jpg')
+		&:nth-child(5)
+			.top-grid__image
+				background-image: url('../img/top-lcd.png')
+		&:nth-child(6)
+			.top-grid__image
+				background-image: url('../img/top-pen.png')
+		&:nth-child(9)
+			.top-grid__image
+				background-image: url('../img/top-info.png')
+		&:nth-child(13)
+			.top-grid__image
+				background-image: url('../img/top-mail.png')
+	&__content
+		height: 100%
+		text-align: center
+		position: relative
+	&__image
+		background-image: url('../img/top-users.png')
+		background-repeat: no-repeat
+		background-position: center top
+		background-size: contain
+		width: 100%
+		height: 50px
+		margin: 0 auto
+	&__title
+		color: #fff
+		font-size: 16px
+		letter-spacing: -1px
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		width: 100%
+a.top-grid__item:hover
+	background-color: darken($accent, 5%)
+
 
 @import "media"
