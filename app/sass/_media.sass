@@ -4,60 +4,77 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1199px)
-	.top-grid__item:nth-child(16),
-	.top-grid__item:nth-child(15),
-	.top-grid__item:nth-child(14)
-		margin-top: -185px
+	//
 
 @media only screen and (max-width : 991px)
-	.top-grid__item
-		width: 172px
-		height: 172px
-	.top-grid__item:nth-child(14)
-		margin-top: initial
-	.top-grid__item:nth-child(15)
-		margin-top: -172px
-	.top-grid__item:nth-child(16)
-		margin-top: -172px
-		margin-left: 344px
-	.top-grid__item:nth-child(1)
-		width: 516px
-	.top-grid__item:nth-child(2),
-	.top-grid__item:nth-child(13),
-		background-color: $accent
+	div[class*="col"]:nth-child(17)
+		.top-grid__item
+			margin-top: -100%
+	div[class*="col"]:nth-child(18)
+		.top-grid__item
+			margin-top: -100%
+			margin-left: -100%
 
 @media only screen and (max-width : 767px)
-	.top-grid__item
-		width: 170px
-		height: 170px
-	.top-grid__item:nth-child(1)
-		width: 100%
-	.top-grid__item:nth-child(14),
-	.top-grid__item:nth-child(15)
-		margin-top: -170px
-	.top-grid__item:nth-child(16)
-		margin-left: -340px
-		margin-top: -170px
-	.top-grid__item:nth-child(2)
-		background-color: $accent-light
-	.top-grid__item:nth-child(9)
-		background-color: $accent
+	div[class*="col"]:nth-child(16)
+		.top-grid__item
+			margin-top: -100%
+	div[class*="col"]:nth-child(18)
+		.top-grid__item
+			margin-left: -200%
+	div[class*="col"]:nth-child(14)
+		.top-grid__item
+			z-index: 1
 
 @media only screen and (max-width : 575px)
-	.top-grid__item
-		width: 50%
-	.top-grid__item:nth-child(1)
-		text-align: center
-	.top-grid__item:nth-child(15)
-		margin-top: -340px
-	.top-grid__item:nth-child(16)
-		margin-left: initial
-		margin-top: initial
-	.logo
-		font-size: 42px
+	div[class*="col"]:nth-child(16)
+		.top-grid__item
+			margin-top: -100%
+	div[class*="col"]:nth-child(17)
+		.top-grid__item
+			margin-top: -200%
+	div[class*="col"]:nth-child(18)
+		.top-grid__item
+			margin-top: -300%
+			margin-left: 0
+	div[class*="col"]:nth-child(4)
+		.top-grid__item
+			margin-left: -100%
+	div[class*="col"]:nth-child(8),
+	div[class*="col"]:nth-child(10),
+	div[class*="col"]:nth-child(12),
+		.top-grid__item
+			margin-top: -200%
+	div[class*="col"]:nth-child(15)
+		.top-grid__item
+			margin-top: -100%
+	div[class*="col"]:nth-child(11)
+		.top-grid__item
+			z-index: 1
+
 
 /*==========  Mobile First Method  ==========*/
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px)
-	/**/
+	div[class*="col"]:nth-child(4),
+	div[class*="col"]:nth-child(11)
+		.top-grid__item_menu
+			background-color: $accent
+
+@media only screen and (min-width : 576px)
+	div[class*="col"]:nth-child(11)
+		.top-grid__item_menu
+			background-color: $accent-light
+	div[class*="col"]:nth-child(8)
+		.top-grid__item_menu
+			background-color: $accent
+
+@media only screen and (min-width : 768px)
+	div[class*="col"]:nth-child(8)
+		.top-grid__item_menu
+			background-color: $accent-light
+	div[class*="col"]:nth-child(7),
+	div[class*="col"]:nth-child(15)
+		.top-grid__item_menu
+			background-color: $accent

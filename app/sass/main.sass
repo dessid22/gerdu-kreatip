@@ -92,9 +92,14 @@ ul, li
 	background-position: center top
 	background-size: cover
 	background-repeat: no-repeat
-	min-height: 100vh
-	display: flex
-	align-items: center
+	display: flex //!!важно для вертик выравн
+	flex-direction: column //!!важно
+
+.header-wrap
+	display: flex //!!важно
+	flex-direction: column //!!важно
+	justify-content: center //!!важно
+	min-height: 100vh //!!важно
 
 .logo
 	display: block
@@ -105,6 +110,12 @@ ul, li
 	text-transform: uppercase
 	font-family: OpenSansBold, sans-serif
 	line-height: 1
+	position: absolute
+	top: 20%
+	left: 0
+	z-index: 1
+	width: 200%
+	text-align: left
 	span
 		color: $accent-light
 	&:hover
@@ -118,78 +129,77 @@ h1
 	letter-spacing: 3px
 	text-transform: none
 	font-weight: 300
+	position: absolute
+	top: 50%
+	left: 0
+	z-index: 1
+	width: 200%
+	text-align: left
 
 .top-grid
-	display: flex
-	flex-wrap: wrap
+	width: 100%
 	&__item
-		width: 185px
-		height: 185px
-		background-color: $accent-light
-		padding: 40px 0
-		position: relative
-		transition: all .5s ease
 		display: block
-		&:first-child
-			width: 555px
-			background-color: transparent
-		&:nth-child(4), &:nth-child(11), 
-		&:nth-child(14), &:nth-child(15),
-			background-color: transparent
-		&:nth-child(3), &:nth-child(7), 
-		&:nth-child(8), &:nth-child(10),
-		&:nth-child(12), &:nth-child(16)
-			background-image: url('../img/top-grid-1.jpg')
-			background-position: center center
-			background-repeat: no-repeat
-			background-size: cover
-		&:nth-child(5)
-			background-color: $accent
-		&:nth-child(7)
-			background-image: url('../img/top-grid-2.jpg')
-		&:nth-child(8)
-			background-image: url('../img/top-grid-3.jpg')
-		&:nth-child(10)
-			background-image: url('../img/top-grid-4.jpg')
-		&:nth-child(12)
-			background-image: url('../img/top-grid-5.jpg')
-		&:nth-child(16)
-			background-image: url('../img/top-grid-6.jpg')
-		&:nth-child(5)
-			.top-grid__image
-				background-image: url('../img/top-lcd.png')
-		&:nth-child(6)
-			.top-grid__image
-				background-image: url('../img/top-pen.png')
-		&:nth-child(9)
-			.top-grid__image
-				background-image: url('../img/top-info.png')
-		&:nth-child(13)
-			.top-grid__image
-				background-image: url('../img/top-mail.png')
-	&__content
-		height: 100%
-		text-align: center
+		width: 100%
+		padding-bottom: 100% // от его ширины! будет квадрат
+		// padding-bottom: 50% // будет пямоугольник 2:1
 		position: relative
+		text-decoration: none
+	&__content
+		position: absolute
+		width: 100%
+		height: 100%
+		padding: 20% 0
+		text-align: center
+	&__item_menu
+		background-color: $accent-light
+	&__item_gallery
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+	&__item_empty
+		background-color: transparent
 	&__image
 		background-image: url('../img/top-users.png')
 		background-repeat: no-repeat
 		background-position: center top
 		background-size: contain
-		width: 100%
-		height: 50px
+		height: 40%
 		margin: 0 auto
 	&__title
 		color: #fff
 		font-size: 16px
 		letter-spacing: -1px
 		position: absolute
-		bottom: 0
-		left: 50%
-		transform: translateX(-50%)
+		bottom: 20%
 		width: 100%
-a.top-grid__item:hover
-	background-color: darken($accent, 5%)
+		font-weight: 300
+	div[class*="col"]:nth-child(7)
+		.top-grid__image
+			background-image: url('../img/top-lcd.png')
+	div[class*="col"]:nth-child(8)
+		.top-grid__image
+			background-image: url('../img/top-pen.png')
+	div[class*="col"]:nth-child(11)
+		.top-grid__image
+			background-image: url('../img/top-info.png')
+	div[class*="col"]:nth-child(15)
+		.top-grid__image
+			background-image: url('../img/top-mail.png')
+
+a.top-grid__item::before
+	content: ''
+	position: absolute
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	background-color: #000
+	opacity: 0
+	transition: all .5s ease
+
+a.top-grid__item:hover::before
+	opacity: .2
 
 
 @import "media"
