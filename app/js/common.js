@@ -1,4 +1,33 @@
-$( document ).ready(function(){
+$(document).ready(function(){
+
+
+	// При скроллинге до .skills__title
+	$(".skills__title").waypoint(function() {
+		// Анимация горизонтального Skills Bar
+		$('.skills__item').each(function(){
+			$(this).find('.skills__progress').animate({
+				width:$(this).attr('data-percent')
+			},3000);
+		});
+	}, {
+		offset:"40%"
+	}
+	);
+
+	$(document).ready(function(){
+		  $(".notepad__slider").owlCarousel({
+		  	items: 1,
+		  	margin: 0,
+		  	loop: true,
+		  	dots: false,
+		  	// autoplay: true,
+		  	autoplayTimeout: 1500,
+		  	smartSpeed: 800,
+		  	fluidSpeed: 800,
+		  	autoplaySpeed: 800,
+		  	dragEndSpeed: 800
+		  });
+		});
 
 	//E-mail Ajax Send
 	$("form").submit(function() { //Change

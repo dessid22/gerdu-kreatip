@@ -7,24 +7,15 @@
 	//
 
 @media only screen and (max-width : 991px)
-	div[class*="col"]:nth-child(17)
-		.top-grid__item
-			margin-top: -100%
-	div[class*="col"]:nth-child(18)
-		.top-grid__item
-			margin-top: -100%
-			margin-left: -100%
+	//
 
 @media only screen and (max-width : 767px)
-	div[class*="col"]:nth-child(16)
-		.top-grid__item
-			margin-top: -100%
-	div[class*="col"]:nth-child(18)
-		.top-grid__item
-			margin-left: -200%
-	div[class*="col"]:nth-child(14)
-		.top-grid__item
-			z-index: 1
+	.basic-menu
+		&__list
+			justify-content: center
+	.company
+		text-align: center
+		margin-bottom: 20px
 
 @media only screen and (max-width : 575px)
 	div[class*="col"]:nth-child(16)
@@ -48,9 +39,16 @@
 	div[class*="col"]:nth-child(15)
 		.top-grid__item
 			margin-top: -100%
-	div[class*="col"]:nth-child(11)
+	div[class*="col"]:nth-child(11),
+	div[class*="col"]:nth-child(14),
 		.top-grid__item
 			z-index: 1
+	.logo
+		font-size: 44px
+		text-align: center
+	h1
+		text-align: center
+
 
 
 /*==========  Mobile First Method  ==========*/
