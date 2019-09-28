@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 	// При скроллинге до .skills__title
 	$(".skills__title").waypoint(function() {
 		// Анимация горизонтального Skills Bar
@@ -14,6 +13,7 @@ $(document).ready(function(){
 	}
 	);
 
+	// Настройки слайдера
 	$(document).ready(function(){
 		  $(".notepad__slider").owlCarousel({
 		  	items: 1,
@@ -28,6 +28,36 @@ $(document).ready(function(){
 		  	dragEndSpeed: 800
 		  });
 		});
+
+	
+	// Анимация цифр
+	
+
+	// При скроллинге до .s-numbers
+	$(".s-numbers").waypoint(function() {
+		// Анимация цифр
+		if ($('.counter__number').is(':empty')) {
+		var time = 2;
+		$('.counter__number').each(function(){
+		  var i = 1,
+		      num = $(this).data('num'),
+		      step = 1000 * time / num,
+		      that = $(this),
+		      int = setInterval(function(){
+		        if (i <= num) {
+		          that.html(i);
+		        }
+		        else {
+		          clearInterval(int);
+		        }
+		        i++;
+		      },step);
+		});
+		}
+	}, {
+		offset:"50%"
+	}
+	);
 
 	//E-mail Ajax Send
 	$("form").submit(function() { //Change
