@@ -13,7 +13,7 @@ $(document).ready(function(){
 	}
 	);
 
-	// Настройки слайдера
+	// Настройки слайдера notepad
 	$(document).ready(function(){
 		  $(".notepad__slider").owlCarousel({
 		  	items: 1,
@@ -26,6 +26,23 @@ $(document).ready(function(){
 		  	fluidSpeed: 800,
 		  	autoplaySpeed: 800,
 		  	dragEndSpeed: 800
+		  });
+		});
+
+	// Настройки слайдера clients
+	$(document).ready(function(){
+		  $(".clients-slider").owlCarousel({
+		  	items: 1,
+		  	margin: 0,
+		  	loop: true,
+		  	dots: false,
+		  	// autoplay: true,
+		  	// autoplayTimeout: 1500,
+		  	smartSpeed: 800,
+		  	fluidSpeed: 800,
+		  	autoplaySpeed: 800,
+		  	dragEndSpeed: 800,
+		  	nav: true
 		  });
 		});
 

@@ -1,7 +1,10 @@
 // @import "bourbon"
 
+/* allways top */
 @import "fonts"
 @import "vars"
+
+/* default settings */
 
 *::-webkit-input-placeholder
 	color: #777
@@ -32,6 +35,8 @@ textarea:required:valid
 	border: 1px solid green
 	color: green
 	background-color: transparent
+
+/* project settings*/
 
 body
 	min-width: 320px
@@ -386,10 +391,13 @@ a.top-grid__item:hover::before
 	background-position: center center
 	background-size: cover
 	// min-height: 700px
-	&__text
-		color: #fff
-		margin-bottom: 60px
-		text-align: center
+
+.s-text
+	color: #fff
+	margin-bottom: 60px
+	text-align: center
+	&_black
+		color: #333
 
 .team-box
 	&__item
@@ -545,6 +553,156 @@ a.top-grid__item:hover::before
 
 /* END SECTION SERVICES */
 
+/* SECTION portfolio */
+
+.s-portfolio
+	background-color: $grey
+	text-align: center
+	.btn
+		margin-top: 30px
+
+.portfolio
+	&__item
+		display: block
+		position: relative
+		width: 100%
+		padding-bottom: 100%
+		overflow: hidden
+		margin-bottom: 30px
+	&__content
+		position: absolute
+		width: 100%
+		height: 100%
+		transform: scale(1.1)
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		transition: all .25s linear
+		&:hover
+			transform: scale(1)
+		&::before
+			content: ''
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			position: absolute
+			background-color: #000
+			opacity: 0
+			transition: all .5s linear
+		&:hover::before
+			opacity: .2
+
+/* end SECTION portfolio */
+
+/* SECTION clients */
+
+.s-clients
+	background-image: url('../img/clients/clients-bg.jpg')
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+
+.clients-wrap
+	margin-bottom: 50px
+
+.clients-line
+	&__item
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+	&__left
+		width: 19%
+		height: 100%
+		padding-bottom: 19%
+		background-color: #333
+		margin-right: 5%
+		position: relative
+		border: 2px solid #010101
+		border-radius: 8%
+		box-shadow: inset 0 0 0 2px #5b5b5c
+		overflow: visible
+	&__pic
+		position: absolute
+		width: 130%
+		height: 130%
+		top: 0
+		left: 0
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	&__title
+		color: #fff
+		text-transform: none
+		font-size: 2vw
+		font-family: "MgOpenModataRegular", sans-serif
+		letter-spacing: 2px
+		font-weight: 400
+	div[class*="col"]:nth-child(1),
+	div[class*="col"]:nth-child(4)
+		.clients-line__pic
+			left: -30%
+	div[class*="col"]:nth-child(2)
+		.clients-line__pic
+			left: 10%
+	div[class*="col"]:nth-child(3)
+		.clients-line__pic
+			top: -17%
+
+.clients-slider
+	.owl-nav button.owl-prev,
+	.owl-nav button.owl-next
+		height: 60px
+		width: 40px
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+		outline: none
+		opacity: .7
+		transition: all .3s ease
+		&:hover
+			opacity: 1
+		span
+			display: none
+	.owl-nav button.owl-prev
+		background-image: url('../img/clients/left.png')
+		left: -10vw
+	.owl-nav button.owl-next
+		background-image: url('../img/clients/right.png')
+		right: -10vw
+	&__item
+		display: flex
+		color: #fff
+		align-items: center
+	&__face
+		width: 35%
+	&__pic
+		height: 100%
+		width: 100%
+		border-radius: 50%
+		display: block
+	&__content
+		width: 65%
+		padding-left: 4%
+	&__name
+		font-size: 28px
+		text-transform: none
+		font-weight: 400
+		margin-bottom: 20px
+	&__text
+		font-style: italic
+		margin-bottom: 10px
+		display: block
+		&::before
+			content: '\201C'
+			margin-right: 10px
+		&::after
+			content: '\201E'
+			margin-left: 10px
 
 
+/* allways bottom */
 @import "media"
