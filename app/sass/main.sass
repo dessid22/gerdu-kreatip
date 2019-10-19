@@ -425,8 +425,9 @@ a.top-grid__item:hover::before
 		color: #fff
 		border: 5px solid #fff
 	&__face
-		max-width: 100%
+		width: 100%
 		border-radius: 50%
+		height: 100%
 	&__name
 		font-size: 2vw
 	&__status
@@ -451,9 +452,98 @@ a.top-grid__item:hover::before
 		display: block
 		font-size: 19px
 
+/* SECTION SERVICES */
 
+.s-services
+	div[class*="col"]
+		margin-bottom: 30px
+	div[class*="col"]:nth-child(2)
+		.our-services__img
+			background-image: url('../img/services/heart.png')
+	div[class*="col"]:nth-child(3)
+		.our-services__img
+			background-image: url('../img/services/paint-bucket.png')
+	div[class*="col"]:nth-child(4)
+		.our-services__img
+			background-image: url('../img/services/customize.png')
 
-/* END SECTION NUMBERS */
+.our-services
+	&__item
+		// border: 1px solid #b5b5b5
+		padding: 15px
+		display: block
+		text-decoration: none
+		position: relative
+		overflow: hidden
+		background-color: $grey
+		transition: background-color 1s
+		height: 100%
+		&:hover
+			text-decoration: none
+			background-color: transparent
+			.our-services__line_top
+				left: 100%
+			.our-services__line_bottom
+				right: 100%
+			.our-services__line_left
+				bottom: 100%
+			.our-services__line_right
+				top: 100%
+	&__line
+		position: absolute
+		display: block
+		transition: all 1s
+		&_top
+			height: 3px
+			width: 100%
+			top: 0
+			left: -100%
+			background: linear-gradient(90deg, transparent, $accent)
+		&_bottom
+			height: 3px
+			width: 100%
+			bottom: 0
+			right: -100%
+			background: linear-gradient(270deg, transparent, $accent)
+		&_left
+			height: 100%
+			width: 3px
+			bottom: -100%
+			left: 0
+			background: linear-gradient(0deg, transparent, $accent)
+		&_right
+			height: 100%
+			width: 3px
+			top: -100%
+			right: 0
+			background: linear-gradient(180deg, transparent, $accent)
+	&__img
+		height: 112px
+		width: 112px
+		background-color: $accent
+		margin-right: 40px
+		display: inline-block
+		vertical-align: middle
+		background-image: url('../img/services/phone.png')
+		background-repeat: no-repeat
+		background-position: center center
+	&__content
+		display: inline-block
+		vertical-align: middle
+		width: 65%
+	&__title
+		font-size: 25px
+		color: $accent
+		text-transform: none
+		margin-top: 0px
+		margin-bottom: 10px
+		line-height: 1.1
+		font-weight: 300
+	&__text
+		color: #333
+		display: block
+
+/* END SECTION SERVICES */
 
 
 

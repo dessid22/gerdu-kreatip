@@ -20,7 +20,7 @@ $(document).ready(function(){
 		  	margin: 0,
 		  	loop: true,
 		  	dots: false,
-		  	// autoplay: true,
+		  	autoplay: true,
 		  	autoplayTimeout: 1500,
 		  	smartSpeed: 800,
 		  	fluidSpeed: 800,
@@ -31,29 +31,26 @@ $(document).ready(function(){
 
 	
 	// Анимация цифр
-	
-
 	// При скроллинге до .s-numbers
 	$(".s-numbers").waypoint(function() {
-		// Анимация цифр
-		if ($('.counter__number').is(':empty')) {
-		var time = 2;
-		$('.counter__number').each(function(){
-		  var i = 1,
-		      num = $(this).data('num'),
-		      step = 1000 * time / num,
-		      that = $(this),
-		      int = setInterval(function(){
-		        if (i <= num) {
-		          that.html(i);
-		        }
-		        else {
-		          clearInterval(int);
-		        }
-		        i++;
-		      },step);
-		});
-		}
+		// if ($('.counter__number').is(':empty')) {
+		// var time = 2;
+		// $('.counter__number').each(function(){
+		//   var i = 1,
+		//       num = $(this).data('num'),
+		//       step = 1000 * time / num,
+		//       that = $(this),
+		//       int = setInterval(function(){
+		//         if (i <= num) {
+		//           that.html(i);
+		//         }
+		//         else {
+		//           clearInterval(int);
+		//         }
+		//         i++;
+		//       },step);
+		// });
+		// }
 	}, {
 		offset:"50%"
 	}

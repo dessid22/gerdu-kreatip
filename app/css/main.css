@@ -508,8 +508,9 @@ a.top-grid__item:hover::before {
   border: 5px solid #fff; }
 
 .team-box__face {
-  max-width: 100%;
-  border-radius: 50%; }
+  width: 100%;
+  border-radius: 50%;
+  height: 100%; }
 
 .team-box__name {
   font-size: 2vw; }
@@ -534,9 +535,121 @@ a.top-grid__item:hover::before {
     display: block;
     font-size: 19px; }
 
-/* END SECTION NUMBERS */
+/* SECTION SERVICES */
+.s-services div[class*="col"] {
+  margin-bottom: 30px; }
+
+.s-services div[class*="col"]:nth-child(2) .our-services__img {
+  background-image: url("../img/services/heart.png"); }
+
+.s-services div[class*="col"]:nth-child(3) .our-services__img {
+  background-image: url("../img/services/paint-bucket.png"); }
+
+.s-services div[class*="col"]:nth-child(4) .our-services__img {
+  background-image: url("../img/services/customize.png"); }
+
+.our-services__item {
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  background-color: #eee;
+  -webkit-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  transition: background-color 1s;
+  height: 100%; }
+  .our-services__item:hover {
+    text-decoration: none;
+    background-color: transparent; }
+    .our-services__item:hover .our-services__line_top {
+      left: 100%; }
+    .our-services__item:hover .our-services__line_bottom {
+      right: 100%; }
+    .our-services__item:hover .our-services__line_left {
+      bottom: 100%; }
+    .our-services__item:hover .our-services__line_right {
+      top: 100%; }
+
+.our-services__line {
+  position: absolute;
+  display: block;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+  .our-services__line_top {
+    height: 3px;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background: -webkit-gradient(linear, left top, right top, from(transparent), to(#1abc9c));
+    background: -o-linear-gradient(left, transparent, #1abc9c);
+    background: linear-gradient(90deg, transparent, #1abc9c); }
+  .our-services__line_bottom {
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    right: -100%;
+    background: -webkit-gradient(linear, right top, left top, from(transparent), to(#1abc9c));
+    background: -o-linear-gradient(right, transparent, #1abc9c);
+    background: linear-gradient(270deg, transparent, #1abc9c); }
+  .our-services__line_left {
+    height: 100%;
+    width: 3px;
+    bottom: -100%;
+    left: 0;
+    background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#1abc9c));
+    background: -o-linear-gradient(bottom, transparent, #1abc9c);
+    background: linear-gradient(0deg, transparent, #1abc9c); }
+  .our-services__line_right {
+    height: 100%;
+    width: 3px;
+    top: -100%;
+    right: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#1abc9c));
+    background: -o-linear-gradient(top, transparent, #1abc9c);
+    background: linear-gradient(180deg, transparent, #1abc9c); }
+
+.our-services__img {
+  height: 112px;
+  width: 112px;
+  background-color: #1abc9c;
+  margin-right: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("../img/services/phone.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.our-services__content {
+  display: inline-block;
+  vertical-align: middle;
+  width: 65%; }
+
+.our-services__title {
+  font-size: 25px;
+  color: #1abc9c;
+  text-transform: none;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  font-weight: 300; }
+
+.our-services__text {
+  color: #333;
+  display: block; }
+
+/* END SECTION SERVICES */
 /*==========  Desktop First Method  ==========*/
 /* Large Devices, Wide Screens */
+@media only screen and (max-width: 1199px) {
+  .our-services__content {
+    width: 55%; } }
+
+@media only screen and (max-width: 991px) {
+  .our-services__content {
+    width: 65%; } }
+
 @media only screen and (max-width: 767px) {
   .basic-menu__list {
     -webkit-box-pack: center;
@@ -576,7 +689,18 @@ a.top-grid__item:hover::before {
     font-size: 44px;
     text-align: center; }
   h1 {
-    text-align: center; } }
+    text-align: center; }
+  .our-services__img {
+    display: block;
+    margin: 0 auto 20px auto; }
+  .our-services__content {
+    display: block;
+    margin: 0 auto;
+    width: 100%; }
+  .our-services__item {
+    text-align: center; }
+  .our-services__title {
+    font-size: 18px; } }
 
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
