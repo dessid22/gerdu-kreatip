@@ -838,6 +838,69 @@ a.top-grid__item:hover::before {
     content: '\201E';
     margin-left: 10px; }
 
+/* END SECTION clients */
+/* SECTION MAP */
+.s-map {
+  padding: 0;
+  position: relative; }
+
+.contacts-box {
+  position: absolute;
+  top: 0;
+  right: 16%;
+  width: 290px;
+  font-size: 18px;
+  background-color: #34495e;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 50px;
+  text-align: center; }
+  .contacts-box__mail {
+    font-weight: 300;
+    display: block; }
+  .contacts-box__phone {
+    color: #1abc9c;
+    display: block;
+    margin-bottom: 30px; }
+  .contacts-box__address {
+    display: block;
+    margin-bottom: 30px; }
+
+.social {
+  font-size: 38px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .social__item {
+    margin: 0px 5px;
+    display: block;
+    color: #fff;
+    opacity: .7;
+    text-decoration: none;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; }
+    .social__item:hover {
+      color: #fff;
+      opacity: 1;
+      text-decoration: none; }
+
+/* END SECTION MAP */
+.footer {
+  background-color: #34495e;
+  padding: 40px 0; }
+
+.logo_bottom {
+  position: static;
+  width: initial;
+  display: inline-block;
+  font-size: 30px; }
+
 /* allways bottom */
 /*==========  Desktop First Method  ==========*/
 /* Large Devices, Wide Screens */
@@ -926,7 +989,17 @@ a.top-grid__item:hover::before {
   .clients-slider__content {
     width: 60%;
     height: 60%;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .contacts-box {
+    right: 50%;
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%); }
+  .logo_bottom {
+    margin: 0 auto;
+    font-size: 30px; }
+  .bottom-line {
+    text-align: center; } }
 
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
