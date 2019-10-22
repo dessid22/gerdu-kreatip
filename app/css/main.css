@@ -54,18 +54,6 @@
   -webkit-box-shadow: none;
           box-shadow: none; }
 
-input:focus:required:invalid,
-textarea:focus:required:invalid {
-  color: red;
-  border: 1px solid red;
-  background-color: transparent; }
-
-input:required:valid,
-textarea:required:valid {
-  border: 1px solid green;
-  color: green;
-  background-color: transparent; }
-
 /* project settings*/
 body {
   min-width: 320px;
@@ -471,13 +459,25 @@ a.top-grid__item:hover::before {
   position: relative;
   padding-top: 100%;
   cursor: pointer;
-  border-radius: 50%; }
-  .team-box__item:hover .team-box__front {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg); }
-  .team-box__item:hover .team-box__back {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg); }
+  border-radius: 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transition: all 1.3s ease;
+  -o-transition: all 1.3s ease;
+  transition: all 1.3s ease; }
+  .team-box__item:hover {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); }
+    .team-box__item:hover .team-box__front {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+    .team-box__item:hover .team-box__back {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg); }
+
+.team-box__item_ok {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg); }
 
 .team-box__front, .team-box__back {
   position: absolute;
@@ -897,9 +897,155 @@ a.top-grid__item:hover::before {
 
 .logo_bottom {
   position: static;
-  width: initial;
   display: inline-block;
-  font-size: 30px; }
+  font-size: 30px;
+  width: 100%; }
+
+/* Popup animation */
+.mfp-zoom-in .mfp-with-anim {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8); }
+
+.mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
+
+.mfp-zoom-in.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+
+.mfp-zoom-in.mfp-removing .mfp-with-anim {
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0; }
+
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0; }
+
+.mfp-3d-unfold .mfp-content {
+  -webkit-perspective: 2000px;
+          perspective: 2000px; }
+
+.mfp-3d-unfold .mfp-with-anim {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(-60deg);
+          transform: rotateY(-60deg); }
+
+.mfp-3d-unfold.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.mfp-3d-unfold.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg); }
+
+.mfp-3d-unfold.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+
+.mfp-3d-unfold.mfp-removing .mfp-with-anim {
+  -webkit-transform: rotateY(60deg);
+          transform: rotateY(60deg);
+  opacity: 0; }
+
+.mfp-3d-unfold.mfp-removing.mfp-bg {
+  opacity: 0; }
+
+/* END Popup animation */
+.hidden {
+  display: none; }
+
+.callback-form {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  max-width: 290px;
+  margin: auto;
+  background-color: #34495e; }
+  .callback-form__btn {
+    width: 100%;
+    background-color: #1abc9c;
+    color: #fff; }
+    .callback-form__btn:hover {
+      background-color: #17a689; }
+  .callback-form__input, .callback-form__textarea {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: 2px solid #1abc9c;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-bottom: 20px; }
+  .callback-form__textarea {
+    resize: none; }
+  .callback-form .mfp-close {
+    color: #fff; }
+  .callback-form__title {
+    color: #fff;
+    text-transform: none;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center; }
+  .callback-form__message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #34495e;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 40px;
+    display: none; }
+    .callback-form__message span {
+      display: block;
+      text-align: center;
+      font-size: 22px; }
+  .callback-form__message_sucsess {
+    display: block; }
+
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+  color: red;
+  border: 2px solid red;
+  background-color: #fff; }
+
+input:required:valid,
+textarea:required:valid {
+  border: 2px solid #1abc9c;
+  color: #333;
+  background-color: #fff; }
 
 /* allways bottom */
 /*==========  Desktop First Method  ==========*/

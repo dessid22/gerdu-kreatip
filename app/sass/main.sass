@@ -24,18 +24,6 @@
 *:invalid // убрать обводку незаполн. поля в Мозиле
 	box-shadow: none
 
-input:focus:required:invalid,
-textarea:focus:required:invalid
-	color: red
-	border: 1px solid red
-	background-color: transparent
-
-input:required:valid,
-textarea:required:valid
-	border: 1px solid green
-	color: green
-	background-color: transparent
-
 /* project settings*/
 
 body
@@ -406,11 +394,16 @@ a.top-grid__item:hover::before
 		padding-top: 100%
 		cursor: pointer
 		border-radius: 50%
+		transform: rotateY(90deg)
+		transition: all 1.3s ease
 		&:hover
+			transform: rotateY(0deg)
 			.team-box__front
 				transform: rotateY(180deg)
 			.team-box__back
 				transform: rotateY(360deg)
+	&__item_ok
+		transform: rotateY(0deg)
 	&__front, &__back
 		position: absolute
 		width: 100%
@@ -757,9 +750,126 @@ a.top-grid__item:hover::before
 
 .logo_bottom
 	position: static
-	width: initial
 	display: inline-block
 	font-size: 30px
+	width: 100%
+
+/* Popup animation */
+.mfp-zoom-in
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.3s ease-in-out
+		transform: scale(0.8)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.5s ease-out
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(0.8)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
+.mfp-3d-unfold
+	.mfp-content
+		perspective: 2000px
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.3s ease-in-out
+		transform-style: preserve-3d
+		transform: rotateY(-60deg)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.5s
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: rotateY(0deg)
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: rotateY(60deg)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
+/* END Popup animation */
+
+.hidden
+	display: none
+
+.callback-form
+	position: relative
+	background: #fff
+	padding: 20px
+	max-width: 290px
+	margin: auto
+	background-color: #34495e
+	&__btn
+		width: 100%
+		background-color: $accent
+		color: #fff
+		&:hover
+			background-color: darken($accent, 5%)
+	&__input,
+	&__textarea
+		width: 100%
+		padding: 10px 20px
+		outline: none
+		border: 2px solid $accent
+		background-color: #fff
+		border-radius: 30px
+		margin-bottom: 20px
+	&__textarea
+		resize: none
+	.mfp-close
+		color: #fff
+	&__title
+		color: #fff
+		text-transform: none
+		font-size: 22px
+		margin-bottom: 20px
+		text-align: center
+	&__message
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		background-color: #34495e
+		color: #fff
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 40px
+		display: none
+		span
+			display: block
+			text-align: center
+			font-size: 22px
+	&__message_sucsess
+		display: block
+
+
+input:focus:required:invalid,
+textarea:focus:required:invalid
+	color: red
+	border: 2px solid red
+	background-color: #fff
+
+input:required:valid,
+textarea:required:valid
+	border: 2px solid $accent
+	color: #333
+	background-color: #fff
+
 
 
 /* allways bottom */

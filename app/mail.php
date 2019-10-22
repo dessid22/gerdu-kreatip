@@ -1,22 +1,24 @@
 <?php
 
 $admin_email = "dessid@yandex.ru";
-$project_name  = "Breeze Cosmetics";
+$project_name  = "Креативное Агентство";
 $form_subject   = "Сообщение с сайта \"$project_name\"";
 
-$fresh_type = trim($_POST["fresh-type"]);
-$fresh_color = trim($_POST["fresh-color"]);
-$fresh_mode = trim($_POST["fresh-mode"]);
-$fresh_delivery = trim($_POST["fresh-delivery"]);
-$fresh_installation = trim($_POST["fresh-installation"]);
-$customer_name = trim($_POST["customer-name"]);
-$customer_phone = trim($_POST["customer-phone"]);
-$customer_question = trim($_POST["customer-question"]);
-$customer_howmany = trim($_POST["customer-howmany"]);
-$form_name = trim($_POST["form-name"]);
+$guest_name = trim($_POST["guest-name"]);
+$guest_phone = trim($_POST["guest-phone"]);
+$guest_message = trim($_POST["guest-message"]);
+// $fresh_delivery = trim($_POST["fresh-delivery"]);
+// $fresh_installation = trim($_POST["fresh-installation"]);
+// $customer_name = trim($_POST["customer-name"]);
+// $customer_phone = trim($_POST["customer-phone"]);
+// $customer_question = trim($_POST["customer-question"]);
+// $customer_howmany = trim($_POST["customer-howmany"]);
+// $form_name = trim($_POST["form-name"]);
 
 $message = "Форма: $form_name <br>";
-if($customer_name) {$message.="Имя: $customer_name <br>"};
+if($guest_name) {$message.="Имя: $guest_name <br>"};
+if($guest_phone) {$message.="Имя: $guest_phone <br>"};
+if($guest_message) {$message.="Имя: $guest_message <br>"};
 // Имя: $customer_name <br>
 // Телефон: $customer_phone <br>
 // Вопрос: $customer_question <br>

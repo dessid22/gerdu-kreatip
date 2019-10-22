@@ -35,8 +35,8 @@ gulp.task('scripts', function() {
         'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
         'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js', // Берем Magnific Popup
         'app/libs/owl/owl.carousel.min.js', // Берем Owlcarousel
-        'app/libs/waypoints/waypoints.min.js', // и т.д.
-        'app/libs/animate/animate-css.js'
+        'app/libs/waypoints/waypoints.min.js' // и т.д.
+        // 'app/libs/animate/animate-css.js'
         ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
