@@ -138,6 +138,24 @@ $(document).ready(function(){
 	}
 	);
 
+	$(window).scroll(function() { // Делаем видимой кнопку "наверх"
+		// $(window) - окно браузера
+		// .scroll() - событие прокрутки
+		if($(this).scrollTop() > $(this).height()) {
+		//.scrollTop() - значение отступа прокрутки сверху
+			$('.to-top').addClass('active');
+		} else {
+			$('.to-top').removeClass('active');
+		}
+	});
+
+	$('.to-top').click(function() { // Скролл наверх
+		$("html, body").animate({scrollTop: 0}, "slow");
+		// .animate() - произвольная анимация набора CSS свойств
+		return false;
+		// return false - для остановки распространения события .click() на другие элементы
+	});
+
 	//Chrome Smooth Scroll
 	try {
 		$.browserSelector();
