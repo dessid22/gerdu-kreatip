@@ -2,33 +2,17 @@
 
 $admin_email = "dessid@yandex.ru";
 $project_name  = "Креативное Агентство";
-$form_subject   = "Сообщение с сайта \"$project_name\"";
+$form_subject = "Сообщение с сайта \"$project_name\"";
 
 $guest_name = trim($_POST["guest-name"]);
 $guest_phone = trim($_POST["guest-phone"]);
 $guest_message = trim($_POST["guest-message"]);
-// $fresh_delivery = trim($_POST["fresh-delivery"]);
-// $fresh_installation = trim($_POST["fresh-installation"]);
-// $customer_name = trim($_POST["customer-name"]);
-// $customer_phone = trim($_POST["customer-phone"]);
-// $customer_question = trim($_POST["customer-question"]);
-// $customer_howmany = trim($_POST["customer-howmany"]);
-// $form_name = trim($_POST["form-name"]);
+$form_name = trim($_POST["form-name"]);
 
 $message = "Форма: $form_name <br>";
-if($guest_name) {$message.="Имя: $guest_name <br>"};
-if($guest_phone) {$message.="Имя: $guest_phone <br>"};
-if($guest_message) {$message.="Имя: $guest_message <br>"};
-// Имя: $customer_name <br>
-// Телефон: $customer_phone <br>
-// Вопрос: $customer_question <br>
-// Количество штук: $customer_howmany <br>
-// Тип освежителя: $fresh_type <br>
-// Цвет освежителя: $fresh_color <br>
-// Форма освежителя: $fresh_mode <br>
-// Доставка: $fresh_delivery <br>
-// Установка: $fresh_installation <br>
-// ";
+$message .= "Имя: $guest_name <br>";
+$message .= "Имя: $guest_phone <br>";
+$message .= "Имя: $guest_message <br>";
 
 function adopt($text) {
 	return '=?UTF-8?B?'.Base64_encode($text).'?=';

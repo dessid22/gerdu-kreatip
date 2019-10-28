@@ -98,7 +98,7 @@ $(document).ready(function(){
 	});
 
 	//E-mail Ajax Send
-	$("form").submit(function() { //Change
+	$(".callback-form").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
@@ -108,11 +108,11 @@ $(document).ready(function(){
 			// Выводим сообщение об успешной отправке
 			$(".callback-form__message").addClass("callback-form__message_success");
 			setTimeout(function() {
-			// Удаляем сообщение об успешной отправке через 2000 мс
+			// // Удаляем сообщение об успешной отправке
 			$(".callback-form__message").removeClass("callback-form__message_success");
-			// Сбрасываем значения полей через 2000 мс
+			// Сбрасываем значения полей
 			th.trigger("reset");
-			// Закрываем magnificPopup через 2000 мс
+			// Закрываем magnificPopup
 			var magnificPopup = $.magnificPopup.instance;
 			magnificPopup.close();
 			}, 2000);
